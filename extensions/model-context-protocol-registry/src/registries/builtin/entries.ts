@@ -7,6 +7,31 @@ const METABRAIN_DB_PATH = join(homedir(), ".metabrain.db");
 
 export const OFFICIAL_ENTRIES: RegistryEntry[] = [
   {
+    name: "leal",
+    title: "Leal",
+    description:
+      "Design and launch Apple Wallet and Google Wallet loyalty stamp cards for shops, cafés and salons. Read a business's name, colours and logo from its website, preview card designs as real wallet passes, then save the card, rewards, a QR signup poster and the store location. Hosted Streamable HTTP server with OAuth 2.1 sign-in (dynamic client registration and PKCE); design previews work without an account.",
+    icon: "https://mcp.getleal.com/favicon/web-app-manifest-512x512.png",
+    homepage: "https://www.getleal.com/mcp",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://mcp.getleal.com/mcp"],
+    },
+    remoteUrl: "https://mcp.getleal.com/mcp",
+  },
+  {
+    name: "paper-plane-post",
+    title: "Paper Plane Post",
+    description: "Create and send an AI-illustrated postcard anywhere in the world",
+    icon: "https://paperplanepost.com/icon.png",
+    homepage: "https://paperplanepost.com/for/agents",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://api.paperplanepost.com/v1/mcp"],
+    },
+    remoteUrl: "https://api.paperplanepost.com/v1/mcp",
+  },
+  {
     name: "wine-labs",
     title: "Wine Labs",
     description:
@@ -111,6 +136,19 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
     remoteUrl: "https://www.affix-io.com/mcp/",
   },
   {
+    name: "agenticwebscore",
+    title: "AgenticWebScore",
+    description:
+      "Scan a public website for AI agent readiness: 60 checks, a score, and the evidence for each. The checks cover robots.txt and AI crawler rules, sitemaps, headings and structured data, HTTP caching and real 404s, markdown negotiation and llms.txt, OpenAPI and MCP servers. Each check returns its status, the evidence it read and a shell command that repeats the measurement. 4 tools: scan_site starts a scan or returns a stored record younger than 6 hours; get_score and get_report read stored records; list_checks returns the rubric. Remote Streamable HTTP server at https://agenticwebscore.com/mcp; no sign-up, no API key.",
+    icon: "https://raw.githubusercontent.com/marifeting/agenticwebscore-mcp/main/assets/logo-512.png",
+    homepage: "https://agenticwebscore.com",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://agenticwebscore.com/mcp"],
+    },
+    remoteUrl: "https://agenticwebscore.com/mcp",
+  },
+  {
     name: "aggregate",
     title: "Aggregate",
     description:
@@ -193,6 +231,21 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
     remoteUrl: "https://ausca.com/mcp",
   },
   {
+    name: "awaken",
+    title: "Awaken Tax",
+    description:
+      "Crypto tax accounting in your Awaken account: search and review transactions from your connected wallets and exchanges, label, split, merge and correct them with undo, investigate missing cost basis and trace tax lots, summarize realized gains, income and top P&L assets, reconcile 1099-DA forms, and generate tax reports and CSV exports. Write tools only run with read + write access. Hosted remote Streamable HTTP server through `mcp-remote`; Awaken API key as an `Authorization: Bearer <portfolioId>:<apiKey>` header (Settings -> API Keys; Dolphin or Whale plan). Replace YOUR_PORTFOLIO_ID and YOUR_API_KEY in AWAKEN_AUTH_HEADER; keep the Bearer prefix.",
+    icon: "https://awaken.tax/512.png",
+    homepage: "https://awaken.tax/docs/agents",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://mcp.awaken.tax/mcp", "--header", "Authorization:${AWAKEN_AUTH_HEADER}"],
+      env: {
+        AWAKEN_AUTH_HEADER: "Bearer YOUR_PORTFOLIO_ID:YOUR_API_KEY",
+      },
+    },
+  },
+  {
     name: "award-travel-finder",
     title: "Award Travel Finder",
     description:
@@ -203,6 +256,19 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
       command: "npx",
       args: ["-y", "mcp-remote", "https://mcp.awardtravelfinder.com/mcp"],
     },
+  },
+  {
+    name: "ayhire",
+    title: "AyHire",
+    description:
+      "Hire engineers by what they shipped. Describe a role and AyHire finds developers from their public GitHub work, judges each one against the role's criteria with links to the evidence, says who is open to work, and keeps roles and a shortlist shared with the AyHire web app. 35+ tools; analyses that cost money are marked. Hosted remote Streamable HTTP server; OAuth 2.1 sign-in with dynamic client registration, no API key to paste; 14-day free trial.",
+    icon: "https://ayhire.com/icon.svg",
+    homepage: "https://ayhire.com/agents.md",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://ayhire.com/mcp"],
+    },
+    remoteUrl: "https://ayhire.com/mcp",
   },
   {
     name: "backlink-guard",
@@ -324,6 +390,20 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
       args: ["-y", "mcp-remote", "https://api.candor.money/mcp"],
     },
     remoteUrl: "https://api.candor.money/mcp",
+  },
+  {
+    name: "carbon-forge",
+    title: "Carbon Forge",
+    description:
+      "Source control and a shared record for people and agents. Code, files and prose live in one record on the server; an agent opens a lane, a set of patches over the trunk, instead of cloning, and each landing is one all-or-nothing changeset. Blame, grep, diff and history run on the server, and git is a projection pushed to GitHub. Hosted remote Streamable HTTP server at https://carbonforge.dev/api/mcp; it reads public workspaces with no sign-in and no API key, and writing needs a bearer token from Carbon Forge's settings.",
+    icon: "https://carbonforge.dev/icon-192.png",
+    homepage:
+      "https://carbonforge.dev/docs/p/guides/mcp-anonymous-access?utm_source=raycast&utm_medium=referral&utm_campaign=push-2026-10-28",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://carbonforge.dev/api/mcp"],
+    },
+    remoteUrl: "https://carbonforge.dev/api/mcp",
   },
   {
     name: "chirpie",
@@ -837,6 +917,32 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
     },
   },
   {
+    name: "house-ai",
+    title: "House AI",
+    description:
+      "AI interior and exterior design. Share a photo of a room, a house or a yard, pick one of 100+ styles, and House AI returns a photorealistic redesign of that same space. Also preview wall paint and flooring, empty a cluttered room, virtually stage an empty one, find real furniture and decor, and shop the look of a design. Hosted remote Streamable HTTP server at https://mcp.houseaiapp.com/mcp with a direct HTTP connection in Raycast and an `mcp-remote` fallback for other clients; OAuth 2.1 sign-in with dynamic client registration and PKCE, no API key to paste. Designs use your House AI credits.",
+    icon: "https://raw.githubusercontent.com/Apex-Byte-Technologies/house-ai-mcp/main/assets/logo.png",
+    homepage: "https://www.houseaiapp.com/connector",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://mcp.houseaiapp.com/mcp"],
+    },
+    remoteUrl: "https://mcp.houseaiapp.com/mcp",
+  },
+  {
+    name: "isms-copilot",
+    title: "ISMS Copilot",
+    description:
+      "The compliance specialist your AI calls: ISO 27001, SOC 2, GDPR, NIS 2, DORA and more. Ask ISMS Copilot framework questions and work with your compliance workspaces, documents, memories, company profile and client companies. Hosted remote Streamable HTTP server at https://account.ismscopilot.com/v1/account/mcp with a direct HTTP connection in Raycast and an `mcp-remote` fallback for other clients; OAuth 2.1 sign-in with dynamic client registration, no API key to paste; free plan available.",
+    icon: "https://www.ismscopilot.com/favicon-512.png",
+    homepage: "https://www.ismscopilot.com/mcp?ref=raycast",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://account.ismscopilot.com/v1/account/mcp"],
+    },
+    remoteUrl: "https://account.ismscopilot.com/v1/account/mcp",
+  },
+  {
     name: "quantral",
     title: "Quantral",
     description:
@@ -1106,6 +1212,19 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
     remoteUrl: "https://moltnode.ag/mcp",
   },
   {
+    name: "monito",
+    title: "Monito",
+    description:
+      "Check a deployed URL in a real browser and get a verdict with evidence. Describe in plain English what should happen; Monito runs the check in a cloud browser and returns passed, failed or cannot verify with screenshots, network and console logs, and can save the check as a reusable test. Runs use Monito credits; the free plan includes 50 a month. Hosted remote Streamable HTTP server; OAuth 2.1 sign-in with dynamic client registration and PKCE, or an API key in the `x-api-key` header.",
+    icon: "https://www.monito.dev/brand/monito-app-icon-512.png",
+    homepage: "https://www.monito.dev/docs/mcp",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://www.monito.dev/api/mcp"],
+    },
+    remoteUrl: "https://www.monito.dev/api/mcp",
+  },
+  {
     name: "multi-calendar",
     title: "Multi Calendar",
     description:
@@ -1130,6 +1249,19 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
       args: ["-y", "mcp-remote", "https://mail.lumman.co/mcp"],
     },
     remoteUrl: "https://mail.lumman.co/mcp",
+  },
+  {
+    name: "nebenkostenpro",
+    title: "NebenkostenPro",
+    description:
+      "Free German utility cost (Nebenkosten) data for tenants and landlords: property tax rates for all 10,304 German municipalities, utility cost figures for the 400 largest cities, housing benefit rent levels, billing and objection deadlines, the 17 apportionable operating cost types and statistics from checks of real utility bills, each value with date and source. Also returns the link to check or create a utility bill at NebenkostenPro. Read-only, 9 tools. Hosted remote Streamable HTTP server at https://nebenkostenpro.de/mcp with a direct HTTP connection in Raycast and an `mcp-remote` fallback for other clients; no sign-in, no API key.",
+    icon: "https://nebenkostenpro.de/icon-512.png",
+    homepage: "https://nebenkostenpro.de/mcp",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://nebenkostenpro.de/mcp"],
+    },
+    remoteUrl: "https://nebenkostenpro.de/mcp",
   },
   {
     name: "netactuate",
@@ -1283,6 +1415,19 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
     },
   },
   {
+    name: "posty",
+    title: "Posty",
+    description:
+      "Write, schedule and publish posts to 20 social platforms (Facebook, Instagram, X, LinkedIn, TikTok, YouTube, Threads, Bluesky, Pinterest, Mastodon, Tumblr, WordPress, Telegram, Discord, Slack and more) with a content calendar and full-quality photo and video uploads. Preview a post before it is saved, list and delete scheduled posts, and switch workspaces. 21 tools. Hosted remote Streamable HTTP server at https://api.posty.hu/mcp-oauth with a direct HTTP connection in Raycast and an `mcp-remote` fallback for other clients; OAuth 2.1 sign-in with dynamic client registration and PKCE, no API key to paste. Needs a Posty account (free trial at posty.hu).",
+    icon: "https://raw.githubusercontent.com/norbertlevente/posty-agent/main/plugins/posty-mcp/.claude-plugin/icon.png",
+    homepage: "https://posty.hu/en/docs/mcp",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://api.posty.hu/mcp-oauth"],
+    },
+    remoteUrl: "https://api.posty.hu/mcp-oauth",
+  },
+  {
     name: "posy",
     title: "Posy",
     description:
@@ -1388,6 +1533,19 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
     },
   },
   {
+    name: "recordhtml",
+    title: "RecordHTML",
+    description:
+      "Record web pages and HTML5 creatives to MP4, WebM or GIF in a real browser. Record a public URL, or an HTML document your AI writes (banners, ads, animations, landing pages), and get a signed video link back. Pages can mark the exact start and end of an animation with trim_start() and trim_end(), and each recording reports dropped frames, page errors and failed requests. 5 tools: record, check a recording, estimate a request without using quota, list and delete recordings. Hosted remote Streamable HTTP server at https://mcp.recordhtml.com with a direct HTTP connection in Raycast and an `mcp-remote` fallback for other clients; OAuth 2.1 sign-in with dynamic client registration and PKCE, or a RecordHTML API key as a Bearer header; free plan with 10 credits a month (1 credit is up to 60 seconds of video). The hosted implementation is proprietary.",
+    icon: "https://recordhtml.com/logo.png",
+    homepage: "https://recordhtml.com/mcp",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://mcp.recordhtml.com"],
+    },
+    remoteUrl: "https://mcp.recordhtml.com",
+  },
+  {
     name: "recued",
     title: "Recued",
     description:
@@ -1401,6 +1559,19 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
         RECUED_MCP_TOKEN: "YOUR_CONTRACT_KEY",
       },
     },
+  },
+  {
+    name: "relaticle",
+    title: "Relaticle",
+    description:
+      "Open-source CRM your AI agents can read and update: companies, people, opportunities, tasks, notes and custom fields. Hosted Streamable HTTP server with OAuth sign-in; 14-day free trial, or self-host with Docker.",
+    icon: "https://relaticle.com/apple-touch-icon.png",
+    homepage: "https://relaticle.com/developers/mcp",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://mcp.relaticle.com"],
+    },
+    remoteUrl: "https://mcp.relaticle.com",
   },
   {
     name: "removeduplicates",
@@ -1717,6 +1888,19 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
     },
   },
   {
+    name: "suprsend",
+    title: "SuprSend",
+    description:
+      "Notification infrastructure for product teams. Manage notification workflows, templates, users, preferences, tenants and subscriber lists, and query delivery logs to debug failed notifications across email, SMS, push, in-app inbox, WhatsApp and Slack. Hosted remote Streamable HTTP server; OAuth 2.1 sign-in with dynamic client registration and PKCE, no API key to paste.",
+    icon: "https://raw.githubusercontent.com/suprsend/claude-plugin/main/.claude-plugin/icon.png",
+    homepage: "https://docs.suprsend.com/reference/mcp-overview",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://mcp.suprsend.com/mcp"],
+    },
+    remoteUrl: "https://mcp.suprsend.com/mcp",
+  },
+  {
     name: "tapetide",
     title: "Tapetide",
     description:
@@ -1808,6 +1992,19 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
     },
   },
   {
+    name: "timesheet",
+    title: "Timesheet",
+    description:
+      "Track time with Timesheet from your AI assistant. Start, pause and stop the timer, log past work, edit time entries, manage projects, todos, tags, expenses and absences, and pull statistics, reports and Excel, CSV or PDF exports. Hosted remote Streamable HTTP server; OAuth 2.1 sign-in with dynamic client registration and PKCE, or a Timesheet API key as a bearer token. Needs a Timesheet Pro plan, which starts with a 30-day free trial.",
+    icon: "https://timesheet.io/android-chrome-512x512.png",
+    homepage: "https://docs.timesheet.io/integrations/mcp-server/",
+    remoteUrl: "https://mcp.timesheet.io",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://mcp.timesheet.io"],
+    },
+  },
+  {
     name: "topxai-models",
     title: "TopxAI Models",
     description:
@@ -1867,6 +2064,19 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
       args: ["-y", "mcp-remote", "https://mcp.unblockingapi.com/mcp"],
     },
     remoteUrl: "https://mcp.unblockingapi.com/mcp",
+  },
+  {
+    name: "vectosolve",
+    title: "VectoSolve",
+    description:
+      "Turn PNG, JPG, WebP or GIF images into vector files: SVG for design tools and Cricut Design Space, DXF for laser cutters, CNC routers and CAD (R12 polylines, millimetres) or EPS for print and sign-making. Tracing modes for logos and illustrations, closed laser cut paths, cutting machines and centerline (one path per stroke for line art and scanned drawings). Returns a PNG preview and the complete file from a public image link. One read-only tool. Hosted remote Streamable HTTP server at https://vectosolve.com/api/mcp with a direct HTTP connection in Raycast and an `mcp-remote` fallback for other clients; no sign-in, no API key.",
+    icon: "https://vectosolve.com/favicon-512.png",
+    homepage: "https://vectosolve.com/integrations/mcp",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://vectosolve.com/api/mcp"],
+    },
+    remoteUrl: "https://vectosolve.com/api/mcp",
   },
   {
     name: "visualping",
@@ -1981,6 +2191,19 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
       command: "npx",
       args: ["-y", "mcp-remote", "https://worthbase.app/mcp"],
     },
+  },
+  {
+    name: "writestack",
+    title: "WriteStack",
+    description:
+      "Grow on Substack from your AI assistant. Draft and schedule Substack Notes, manage articles, and read statistics in your WriteStack account. Hosted remote Streamable HTTP server; OAuth 2.1 sign-in with dynamic client registration and PKCE, or a WriteStack API key as a bearer token. Public connection documentation is MIT licensed; the hosted service is proprietary.",
+    icon: "https://cdn.writestack.io/writestack-app/og/logo.png",
+    homepage: "https://www.writestack.io/mcp",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://www.writestack.io/api/mcp/mcp"],
+    },
+    remoteUrl: "https://www.writestack.io/api/mcp/mcp",
   },
   {
     name: "xero",
