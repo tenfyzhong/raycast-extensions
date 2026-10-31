@@ -7,6 +7,19 @@ const METABRAIN_DB_PATH = join(homedir(), ".metabrain.db");
 
 export const OFFICIAL_ENTRIES: RegistryEntry[] = [
   {
+    name: "industrylens",
+    title: "IndustryLens",
+    description:
+      "Competitive and market intelligence for B2B SaaS: competitor profiles, strategic moves, pricing changes, market landscapes, reports and comparisons, with every fact dated and sourced. Hosted Streamable HTTP server; the public tools need no account or API key.",
+    icon: "https://industry-lens.com/IndustryLens_Favicon.png",
+    homepage: "https://industry-lens.com/mcp",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://api.industry-lens.com/mcp/public"],
+    },
+    remoteUrl: "https://api.industry-lens.com/mcp/public",
+  },
+  {
     name: "leal",
     title: "Leal",
     description:
@@ -1368,6 +1381,19 @@ export const OFFICIAL_ENTRIES: RegistryEntry[] = [
     configuration: {
       command: "npx",
       args: ["-y", "@paddle/paddle-mcp", "--api-key=PADDLE_API_KEY", "--environment=(sandbox|production)"],
+    },
+  },
+  {
+    name: "paidnice",
+    title: "Paidnice",
+    description:
+      "Accounts receivable for Xero and QuickBooks Online. Read the customer email and SMS replies Paidnice collects, list and look up customers, invoices and notes, and update contact people. Hosted remote Streamable HTTP server at https://api.paidnice.com/mcp; OAuth 2.1 sign-in with dynamic client registration, no API key. Needs a Paidnice Pro or Custom plan. The hosted service is proprietary.",
+    icon: "https://www.paidnice.com/images/paidnice-icon-teal.png",
+    homepage: "https://www.paidnice.com/mcp",
+    remoteUrl: "https://api.paidnice.com/mcp",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://api.paidnice.com/mcp"],
     },
   },
   {
@@ -3232,6 +3258,18 @@ export const COMMUNITY_ENTRIES: RegistryEntry[] = [
     configuration: {
       command: "nika",
       args: ["mcp"],
+    },
+  },
+  {
+    name: "norwegian-company-data",
+    title: "Norwegian Company Data",
+    description:
+      "Search Norwegian companies and get accounts, roles, corporate groups and websites from the Brønnøysund registers.",
+    homepage: "https://github.com/skaidigital/brreg-mcp",
+    remoteUrl: "https://tools.skaidigital.com/brreg/mcp",
+    configuration: {
+      command: "npx",
+      args: ["-y", "mcp-remote", "https://tools.skaidigital.com/brreg/mcp"],
     },
   },
   {
